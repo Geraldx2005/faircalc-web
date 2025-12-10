@@ -1,16 +1,161 @@
-# React + Vite
+# 📦 Label & Ribbon Cost Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, Electron-powered calculator for estimating **label printing cost**, **ribbon roll cost**, **TTR usage**, and **combined pricing**.  
+Built with **React + Tailwind + Electron** for a smooth desktop experience.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+### 🟦 Label Calculator
+- Enter **label width & height** in *mm* or *inch*
+- Auto-converts units internally
+- Calculates:
+  - **Cost per 1000 labels**
+  - Cost is based on sq. inch pricing
+- Clean UI with dynamic currency formatting
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🟪 Ribbon Calculator
+- Enter ribbon **width**, **length**, **rate**, **how many up**, and **ordered quantity**
+- Calculates:
+  - **Cost per ribbon roll**
+  - **Number of labels per ribbon**
+  - **Printing cost per 1000 labels**
+  - **Required number of TTR rolls**
+  - **Total cost including TTR**
+- Fully synced with label computations
 
-## Expanding the ESLint configuration
+### 🧩 Additional Features
+- Smooth Expandable TTR section  
+- Custom designed inputs & segmented switch  
+- Fully scrollable UI with **custom scrollbar**  
+- Designed to work as a **desktop app** (Electron)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📸 Tech Stack
+
+| Layer | Tech |
+|-------|------|
+| UI | React + Tailwind CSS |
+| Desktop App | Electron |
+| Styling | Custom components + Tailwind utilities |
+| State Logic | React State Hooks |
+| Build Tool | Vite (if used) |
+
+---
+
+## 📁 Folder Structure
+
+```
+project/
+│
+├── electron/
+│   ├── main.js / main.cjs     # Electron main process
+│   ├── preload.cjs            # Exposed APIs
+│   └── assets/                # App icon, etc.
+│
+├── renderer/
+│   ├── src/
+│   │   ├── App.jsx            # Main UI
+│   │   ├── components/
+│   │   │   ├── SimpleInput.jsx
+│   │   │   ├── SimpleButton.jsx
+│   │   │   ├── SegmentedButton.jsx
+│   │   │   ├── ExpandableSection.jsx
+│   │   │   └── RadioOption.jsx
+│   │   └── index.css          # Tailwind + custom scrollbar
+│   └── dist/                   # Compiled React build
+│
+└── package.json
+```
+
+---
+
+## 🚀 Running the App
+
+### 1️⃣ Install Dependencies
+
+```sh
+npm install
+```
+
+### 2️⃣ Run React Dev Server
+
+```sh
+npm run dev
+```
+
+### 3️⃣ Start Electron
+
+```sh
+npm run electron
+```
+
+---
+
+## 📦 Building the Desktop App
+
+```sh
+npm run build
+npm run electron-build
+```
+
+This generates a standalone executable (EXE) depending on your OS.
+
+---
+
+## ⚙️ Key Logic Highlights
+
+### Label Cost Formula
+
+```
+area(in sq inch) = (width_mm / 25.4) * (height_mm / 25.4)
+cost_per_label = area * rate
+cost_per_1000 = cost_per_label * 1000
+```
+
+### Ribbon Roll Formula
+
+```
+areaSqM = (ribbonWidth_mm / 1000) * ribbonLength_m
+cost_per_roll = areaSqM * rateSqMtr
+
+labels_per_ribbon = floor( ribbonLength_m / labelHeight_m ) * howManyUp
+
+printing_cost_per_1000 = (cost_per_roll / labels_per_ribbon) * 1000
+```
+
+---
+
+## 🎨 Custom Scrollbar Example
+
+```css
+.minimal-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.minimal-scrollbar::-webkit-scrollbar-thumb {
+  background: #2b2b2b;
+  border-radius: 6px;
+}
+```
+
+---
+
+## 🛠 Future Improvements
+- Export results as PDF  
+- Dark mode  
+- Save presets  
+- Cloud sync for label/ribbon templates  
+
+---
+
+## 👨‍💻 Author
+Built with ❤️ and caffeine.
+
+---
+
+## 📜 License
+MIT License (or any license you choose)
+
+---
