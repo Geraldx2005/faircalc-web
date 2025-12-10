@@ -45,33 +45,6 @@ Built with **React + Tailwind + Electron** for a smooth desktop experience.
 
 ---
 
-## Folder Structure
-
-```
-project/
-│
-├── electron/
-│   ├── main.js / main.cjs     # Electron main process
-│   ├── preload.cjs            # Exposed APIs
-│   └── assets/                # App icon, etc.
-│
-├── renderer/
-│   ├── src/
-│   │   ├── App.jsx            # Main UI
-│   │   ├── components/
-│   │   │   ├── SimpleInput.jsx
-│   │   │   ├── SimpleButton.jsx
-│   │   │   ├── SegmentedButton.jsx
-│   │   │   ├── ExpandableSection.jsx
-│   │   │   └── RadioOption.jsx
-│   │   └── index.css          # Tailwind + custom scrollbar
-│   └── dist/                   # Compiled React build
-│
-└── package.json
-```
-
----
-
 ## Running the App
 
 ### Install Dependencies
@@ -125,21 +98,6 @@ labels_per_ribbon = floor( ribbonLength_m / labelHeight_m ) * howManyUp
 
 printing_cost_per_1000 = (cost_per_roll / labels_per_ribbon) * 1000
 ```
-
----
-
-## Custom Scrollbar Example
-
-```css
-.minimal-scrollbar::-webkit-scrollbar {
-  width: 6px;
-}
-.minimal-scrollbar::-webkit-scrollbar-thumb {
-  background: #2b2b2b;
-  border-radius: 6px;
-}
-```
-
 ---
 
 ## 🛠 Future Improvements
@@ -152,10 +110,5 @@ printing_cost_per_1000 = (cost_per_roll / labels_per_ribbon) * 1000
 
 ## Author
 Built with React native and caffeine.
-
----
-
-## License
-MIT License (or any license you choose)
 
 ---
