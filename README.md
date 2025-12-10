@@ -1,13 +1,13 @@
-# 📦 Label & Ribbon Cost Calculator
+# Label & Ribbon Cost Calculator
 
 A modern, responsive, Electron-powered calculator for estimating **label printing cost**, **ribbon roll cost**, **TTR usage**, and **combined pricing**.  
 Built with **React + Tailwind + Electron** for a smooth desktop experience.
 
 ---
 
-## ✨ Features
+## Features
 
-### 🟦 Label Calculator
+### Label Calculator
 - Enter **label width & height** in *mm* or *inch*
 - Auto-converts units internally
 - Calculates:
@@ -15,7 +15,7 @@ Built with **React + Tailwind + Electron** for a smooth desktop experience.
   - Cost is based on sq. inch pricing
 - Clean UI with dynamic currency formatting
 
-### 🟪 Ribbon Calculator
+### Ribbon Calculator
 - Enter ribbon **width**, **length**, **rate**, **how many up**, and **ordered quantity**
 - Calculates:
   - **Cost per ribbon roll**
@@ -25,7 +25,7 @@ Built with **React + Tailwind + Electron** for a smooth desktop experience.
   - **Total cost including TTR**
 - Fully synced with label computations
 
-### 🧩 Additional Features
+### Additional Features
 - Smooth Expandable TTR section  
 - Custom designed inputs & segmented switch  
 - Fully scrollable UI with **custom scrollbar**  
@@ -33,7 +33,7 @@ Built with **React + Tailwind + Electron** for a smooth desktop experience.
 
 ---
 
-## 📸 Tech Stack
+## Tech Stack
 
 | Layer | Tech |
 |-------|------|
@@ -45,7 +45,7 @@ Built with **React + Tailwind + Electron** for a smooth desktop experience.
 
 ---
 
-## 📁 Folder Structure
+## Folder Structure
 
 ```
 project/
@@ -72,21 +72,21 @@ project/
 
 ---
 
-## 🚀 Running the App
+## Running the App
 
-### 1️⃣ Install Dependencies
+### Install Dependencies
 
 ```sh
 npm install
 ```
 
-### 2️⃣ Run React Dev Server
+### Run React Dev Server
 
 ```sh
 npm run dev
 ```
 
-### 3️⃣ Start Electron
+### Start Electron
 
 ```sh
 npm run electron
@@ -94,7 +94,7 @@ npm run electron
 
 ---
 
-## 📦 Building the Desktop App
+## Building the Desktop App
 
 ```sh
 npm run build
@@ -105,7 +105,7 @@ This generates a standalone executable (EXE) depending on your OS.
 
 ---
 
-## ⚙️ Key Logic Highlights
+## Key Logic Highlights
 
 ### Label Cost Formula
 
@@ -128,7 +128,7 @@ printing_cost_per_1000 = (cost_per_roll / labels_per_ribbon) * 1000
 
 ---
 
-## 🎨 Custom Scrollbar Example
+## Custom Scrollbar Example
 
 ```css
 .minimal-scrollbar::-webkit-scrollbar {
@@ -150,12 +150,13 @@ printing_cost_per_1000 = (cost_per_roll / labels_per_ribbon) * 1000
 
 ---
 
-## 👨‍💻 Author
-Built with ❤️ and caffeine.
+## Author
+Gerald
+Built with React native and caffeine.
 
 ---
 
-## 📜 License
+## License
 MIT License (or any license you choose)
 
 ---
