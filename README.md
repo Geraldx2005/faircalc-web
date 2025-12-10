@@ -151,7 +151,6 @@ printing_cost_per_1000 = (cost_per_roll / labels_per_ribbon) * 1000
 ---
 
 ## Author
-Gerald
 Built with React native and caffeine.
 
 ---
